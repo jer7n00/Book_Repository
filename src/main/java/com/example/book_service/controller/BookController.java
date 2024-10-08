@@ -30,8 +30,16 @@ public class BookController {
 
     @GetMapping("/books/{id}")
     public Optional<BookEntity> getABook(@PathVariable("id") long bookId)
+
     {
         return book_repo.findById(bookId);
     }
+
+    @DeleteMapping("/books/{id}")
+    public void deleteBook(@PathVariable("id") long bookId)
+    {
+        book_repo.deleteById(bookId);
+    }
+
 
 }
